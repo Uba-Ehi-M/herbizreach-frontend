@@ -1,0 +1,31 @@
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { clearAuthCookie, setAuthCookie } from "@/lib/auth-cookie";
+import type { AuthUser } from "@/types/auth.types";
+
+interface AuthState {
+  user: AuthUser | null;
+  token: string | null;
+  setAuth: (user: AuthUser, token: string) => void;
+  logout: () => void;
+  isAuthenticated: () => boolean;
+}
+
+export const useAuthStore = create<AuthState>()(
+  persist(
+    (set, get) => ({
+      user: null,
+      token: null,
+      setAuth: (user, token) => {
+        setAuthCookie(token);
+        set({ user, token });
+      },
+      logout: () => {
+        clearAuthCookie();
+        set({ user: null, token: null });
+      },
+      isAuthenticated: () => !!get().token,
+    }),
+    { name: "herbizreach-auth" },
+  ),
+);
