@@ -1,6 +1,6 @@
 # HerBizReach Frontend
 
-> Visibility, voice, and growth tools for women-led SMEs across Africa.
+> Visibility, voice, and growth tools for SMEs across Africa.
 
 HerBizReach is a modern Next.js platform that helps entrepreneurs create beautiful storefronts, manage products, and convert buyer interest through WhatsApp and in-app chat — all from a single dashboard.
 
