@@ -217,3 +217,5 @@ Or deploy directly to [Vercel](https://vercel.com) — the recommended platform 
 ---
 
 For product context, start with the landing page at `app/page.tsx`, then explore owner flows in `app/(owner)/` and public storefront flows in `app/store/[slug]/`.
+
+link to Herbizreach: https://herbizreach.vercel.app/
